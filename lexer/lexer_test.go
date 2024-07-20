@@ -2,11 +2,11 @@ package lexer
 
 import (
 	"interpreter/token"
-	_ "testing"
+	t "testing"
 )
 
-func TestNextToken() {
-	input := "=+(){}.;"
+func TestNextToken(t *t.T) {
+	input := "=+(){},;"
 	tests := []struct {
 		expectedType    token.TokenType
 		expectedLiteral string
@@ -35,5 +35,4 @@ func TestNextToken() {
 				i, tt.expectedLiteral, tok.Literal)
 		}
 	}
-
 }
